@@ -1,50 +1,43 @@
-<html>
-    <%= nav_bar brand: "Store", brand_link: root_url  %>
-    <div class="container">
-        <body>
-            <table class="table table-bordered table-hover">
-                <thead>
-                    <tr>
-                        <td>Nome</td>
-                        <td>Descrição</td>
-                        <td>Preço</td>
-                        <td>Quantidade</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% @products.each do |product| %>
-                        <tr>
-                            <td><%= product.name %></td>
-                            <td><%= product.description%></td>
-                            <td><%= product.cost%></td>
-                            <td><%= product.quantity%></td>
-                        </tr>
-                    <% end %>
-                </tbody>
-            </table>
-            <div class="alert alert-success" role="alert">
-                <h4 class="alert=heading">Produto com desconto</h4>
-            </div>
-            <table class="table table-bordered table-hover">
-                <thead>
-                    <tr>
-                        <td>Nome</td>
-                        <td>Descrição</td>
-                        <td>Preço</td>
-                        <td>Quantidade</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% @product_with_disccount.each do |product| %>
-                        <tr>
-                            <td><%= product.name %></td>
-                            <td><%= product.description%></td>
-                            <td><%= product.cost%></td>
-                            <td><%= product.quantity%></td>
-                        </tr>
-                    <% end %>
-                </tbody>
-            </table>
-        </body>
-    </div>
-</html>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <td>Nome</td>
+            <td>Descrição</td>
+            <td>Preço</td>
+            <td>Quantidade</td>
+        </tr>
+    </thead>
+    <tbody>
+        <% @products.each do |product| %>
+            <tr>
+                <td><%= product.name %></td>
+                <td><%= product.description%></td>
+                <td><%= product.cost%></td>
+                <td><%= product.quantity%></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+<div class="alert alert-success" role="alert">
+    <h4 class="alert=heading">Produto com desconto</h4>
+</div>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <td>Nome</td>
+            <td>Descrição</td>
+            <td>Preço</td>
+            <td>Quantidade</td>
+        </tr>
+    </thead>
+    <tbody>
+        <% @product_with_disccount.each do |product| %>
+            <tr>
+                <td><%= product.name %></td>
+                <td><%= product.description%></td>
+                <td><%= product.cost%></td>
+                <td><%= product.quantity%></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
