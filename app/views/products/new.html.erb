@@ -23,6 +23,15 @@
     </div>
     <div class="row">
         <div class="col-sm-2">
+                <%= form.label :departamento %>
+            <div class="form-group">
+                <%= form.collection_select :department_id, 
+                    @departments, :id, :name, {}, class:"form-control"%>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
             <div class="form-group">
                 <%= form.label :preço %>
                 <%= form.number_field :cost, step:0.01, class:"form-control" %>

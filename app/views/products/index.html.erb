@@ -9,6 +9,7 @@
         <tr>
             <td>Nome</td>
             <td>Descrição</td>
+            <td>Departamento</td>
             <td>Preço</td>
             <td>Quantidade</td>
             <td colspan="1">
@@ -19,6 +20,7 @@
             <tr>
                 <td><%= product.name %></td>
                 <td><%= product.description%></td>
+                <td><%= product.department.name%></td>
                 <td><%= product.cost%></td>
                 <td><%= product.quantity%></td>
                 <td><%= button_to "Remover", product, 
