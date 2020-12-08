@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
             flash[:notice] = "Produto salvo com sucesso!"
             redirect_to root_url
         else
-            to_render
+            to_render :new
         end
     end
 
@@ -21,40 +21,40 @@ class ProductsController < ApplicationController
         redirect_to root_url
     end
 
-    def search
-        @name = params[:name]
-        @products= Product.where "name like ?", "%#{@name}%"
-    end
-
     def new
         @product = Product.new
         @departments = Department.all
     end
-
+    
     def edit
-        to_render
+        to_render :edit
     end
-
+    
     def update
         if @product.update product_params
             flash[:notice]= "Produto atualizado com sucesso!"
             redirect_to root_url
         else
-            to_render
+            to_render :edit
         end
+    end
+    
+    def search
+        @name = params[:name]
+        @products= Product.where "name like ?", "%#{@name}%"
     end
 
     def product_params
         params.require(:product)
-              .permit(:name, :description, :cost, :quantity, :department_id)
+        .permit(:name, :description, :cost, :quantity, :department_id)
     end
 
     def set_product
         @product = Product.find(params[:id])
     end
 
-    def to_render
+    def to_render(view)
         @departments = Department.all
-        render :new
+        render view
     end
 end
